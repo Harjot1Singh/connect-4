@@ -26,7 +26,7 @@ All source files are in `src`. The application entry point is `src/main.js`.
 
 Run `npm run dev` to start Webpack with hot-reloading. 
 
-To build with minification, `npn run build`.
+To build with minification, `npm run build`.
 
 To run a production server, with minified assets, `npm run start:production`.
 
