@@ -10,13 +10,13 @@
  */
 
 import React, { Component } from 'react';
-import Board from '../../components/Board';
+import BoardController from '../Board';
 
 export default class HomePage extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div>
-        <Board></Board>
+        <BoardController />
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Counter = styled.div`
@@ -15,7 +15,7 @@ const Counter = styled.div`
     ${props => props.selected ? '' :
     `
     &:hover {
-        background: red;
+        background: ${props.color};
     }
     `
     }

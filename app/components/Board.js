@@ -4,22 +4,31 @@ import styled from 'styled-components';
 import Counter from './Counter';
 
 const Board = props => {
-    props.board.map(row => 
-        <div class="row">
-            {row.map(column => {
-                <Counter selected={false} color="red" />;
+    const board = props.board.map((row, rowIndex) => 
+        <div className="row" key={rowIndex}>
+            {row.map((counter, columnIndex) => {
+                const colors = ["red", "green", "blue"];
+                const selected = (counter === null) ? false : true;
+                const counterProps = {
+                    selected,
+                    color: selected ? colors[counter] : colors[props.player],
+                    key: rowIndex + ':' + columnIndex,
+                    onClick: !selected ? e => props.onClick(props.player, columnIndex) : null,
+                };
+                return <Counter {...counterProps} />;
             })}
         </div>
     );
     return (
         <StyledBoard>
-            
+            {board}
         </StyledBoard>
     );
 };
 
 Board.defaultProps = {
-    board: []
+    board: [],
+    onClick: () => {}
 };
 
 const StyledBoard = styled.div`
