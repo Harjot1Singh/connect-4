@@ -17,22 +17,22 @@ Development:
 
 # Running
 
-## Development
+Note that npm 3+ and Node 4+ should be installed.
+
+## Development/Running
 ``` bash
 # Install dependencies
 npm install
 
-# Serve with webpack hot reload at localhost:8080
+# Serve with webpack hot reload at localhost:3000
+# Only run this is if you plan on developing
 npm start
 
 # Build for production with minification
 npm run build
-```
 
-## Production
-```
 # Run in production mode
-npm run start:prod
+npm run start:prod -- --port 8080
 
 ```
 
