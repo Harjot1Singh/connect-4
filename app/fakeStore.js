@@ -1,7 +1,11 @@
 // Acts as a global store, completely silly
 class Store {
     constructor() {
-        this.store = {};
+        this.store = {
+            ai: true,
+            width: 6,
+            height: 4
+        };
     }
     
     set(obj) {

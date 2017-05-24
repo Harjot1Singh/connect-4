@@ -63,7 +63,8 @@ const StyledBoard = styled.div`
     position: relative;
     margin: 20px auto;
     background: linear-gradient(-45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), linear-gradient(45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), rgb(0, 153, 151);
-    
+    min-width: 335px
+    white-space: nowrap;
 `;
 
 // A styled div component that allows inner div centering

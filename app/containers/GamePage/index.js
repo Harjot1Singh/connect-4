@@ -53,19 +53,19 @@ export default class GamePage extends Component { // eslint-disable-line react/p
       <Container>
         <Title>Connect 4</Title>
         <BoardController {...props} />
-        <NewButton onClick={() => browserHistory.push('/')}>New Game</NewButton>
-        <ResetButton onClick={this.restartGame}>Restart</ResetButton>
+        <Buttons>
+          <Button onClick={() => browserHistory.push('/')}>New Game</Button>
+          <Button onClick={this.restartGame}>Restart</Button>
+        </Buttons>
       </Container>
     );
   }
 }
 
-const ResetButton = styled(Button)`
-  float: right;
-  right: 190px;
-`;
-
-const NewButton = styled(Button)`
-  float: left;
-  left: 210px;
+const Buttons = styled.div`
+  text-align: center;
+  
+  & > button {
+    margin: 30px;
+  }
 `;
