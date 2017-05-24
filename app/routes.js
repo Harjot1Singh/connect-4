@@ -33,12 +33,19 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
+      path: '/play',
+      getComponent(nextState, cb) {
+        import('containers/GamePage')
+        .then(loadModule(cb))
+        .catch(errorLoading);
+      }
+    }, {
       path: '*',
       getComponent(nextState, cb) {
         import('containers/NotFoundPage')
           .then(loadModule(cb))
           .catch(errorLoading);
       },
-    },
+    }, 
   ];
 }

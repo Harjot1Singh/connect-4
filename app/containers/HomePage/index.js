@@ -9,15 +9,28 @@
  * the linting exception.
  */
 
+// Library Imports
 import React, { Component } from 'react';
-import BoardController from '../Board';
+import styled from 'styled-components';
+
+// Local Imports
+import Button from '../../components/Button';
+import Title from '../../components/Title';
+import Container from '../../components/Container';
+import Form from '../../components/Form';
 
 export default class HomePage extends Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props);
+  } 
+  
   render() {
+    
     return (
-      <div>
-        <BoardController />
-      </div>
+      <Container>
+        <Title>Connect 4</Title>
+        <Form />
+      </Container>
     );
   }
 }
