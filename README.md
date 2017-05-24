@@ -6,9 +6,18 @@
 
 - Click button to start new game
 - Play against human or (dumb) AI
+- Color choice
+- Board size choice
+
+Development: 
+ - Webpack hot-reloading
+ - Webpack production bundling
+ - React + React-Router
+ - Styled Components
 
 # Running
 
+## Development
 ``` bash
 # Install dependencies
 npm install
@@ -18,7 +27,10 @@ npm start
 
 # Build for production with minification
 npm run build
+```
 
+## Production
+```
 # Run in production mode
 npm run start:prod
 
