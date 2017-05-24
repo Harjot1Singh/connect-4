@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Counter from './Counter';
 
 // Stateless Component that renders a Connect 4 board
-const Board = ({ board, player, onClick, winner, colors }) => {
+const Board = ({ board, player, onClick, winner, colors, canMove }) => {
     // Function that renders counters for a given row      
     const renderCounters = (row, rowIndex) =>           
         row.map((counter, columnIndex) => {
@@ -16,8 +16,8 @@ const Board = ({ board, player, onClick, winner, colors }) => {
                 selected,
                 color: selected ? colors[counter] : colors[player],
                 key: rowIndex + ':' + columnIndex,
-                onClick: !selected ? e => onClick(player, columnIndex) : null,
-                enabled: !winner
+                onClick: !selected && canMove ? e => onClick(player, columnIndex) : null,
+                enabled: !winner && canMove,
             };
             // If there's a winner, check if this is a winning counter, and mark it
             if (winner)

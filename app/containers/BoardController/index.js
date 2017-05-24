@@ -37,17 +37,16 @@ class BoardController extends Component {
         };
     }
     
-    // Drops a counter into the column, finding a free row
-    // Returns the player who won, null otherwise
+    // Drops a counter into the column, finding a free row, and updates the state
+    // Returns false if there was no space in that column
     makeMove = (player, column) => {
-        if (!this.inBounds(0, column))
-            return null;
         let board = this.state.board;
         // Get the lowest down row
         let row = board.length - 1;
-        // Find a free space
-        while(board[row][column] !== null)
+        // Find a free space in that column
+        while(this.inBounds(row, column) && board[row][column] !== null) {
             row--;
+        }
         // Make the move if it's on the board
         if (this.inBounds(row, column)) {
             board[row][column] = this.state.player;
@@ -57,8 +56,10 @@ class BoardController extends Component {
                 winner: this.checkWin(row, column),
                 movesLeft: this.state.movesLeft - 1
             });
-        }
-        return null;
+            return true;
+        } 
+        // No space was found in this case
+        return false;
     }
     
     // Returns the player who won, along with moves, null otherwise
@@ -124,7 +125,8 @@ class BoardController extends Component {
           onClick: !this.state.winner ? this.makeMove : undefined,
           player: this.state.player,
           winner: this.state.winner,
-          colors: this.props.colors
+          colors: this.props.colors,
+          canMove: !(this.props.ai && this.state.player === 1)
         };
         return (
             <div>
@@ -134,6 +136,19 @@ class BoardController extends Component {
                 <Board {...props} />
             </div>
         );
+    }
+    
+    makeRandomMove = () => {
+       let randomColumn;
+        // Find a valid random move
+        while (!this.inBounds(0, randomColumn)) {
+            randomColumn = this.randomInt(this.state.board[0].length);
+        }
+        // Finally make the move after a short delay, and keep attempting to find a space
+        setTimeout(() => 
+            this.makeMove(this.state.player, randomColumn) 
+            ? true
+            : this.makeRandomMove(), 1000);
     }
     
     componentDidUpdate() {
@@ -148,13 +163,7 @@ class BoardController extends Component {
         
         // If AI is enabled and it's player 2, make a random move
         if (this.props.ai && this.state.player === 1 && !this.state.winner) {
-            let randomColumn;
-            // Find a valid random move
-            while (!this.inBounds(0, randomColumn)) {
-                randomColumn = this.randomInt(this.state.board[0].length);
-            }
-            // Finally make the move
-            this.makeMove(this.state.player, randomColumn);
+            this.makeRandomMove();
         }
     }
 }
