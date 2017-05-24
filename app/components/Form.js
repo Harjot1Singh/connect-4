@@ -9,6 +9,9 @@ import Spinput from './Spinput';
 import Colorput from './Colorput';
 import IconButton from './IconButton';
 import Button from './Button';
+import Header from './Header';
+import Label from './Label';
+import Gap from './Gap';
 
 // Homepage settings form component
 export default class SettingsForm extends Component {
@@ -71,14 +74,6 @@ export default class SettingsForm extends Component {
     }  
 }
 
-const Label = styled.label`
-    font-size: 30px;
-    padding: 10px;
-    position: relative;
-    top: -8px;
-    margin-top: -5px;
-`;
-
 const PlayButton = styled(Button)`
     display: block;
     width: 100px;
@@ -87,21 +82,6 @@ const PlayButton = styled(Button)`
     margin: 20px auto 20px auto;
 `;
 
-const Gap = styled.p`
-    display: inline-block;
-    width: 150px;
-    font-size: 40px;
-    font-weight: bolder;
-    margin: 0;
-    padding: 0;
-`;
-
-const Header = styled.h1`
-    font-size: 40px;
-    vertical-align: center;
-    margin: 0;
-    padding: 10px 0 10px 0;
-`;
 
 const Form = styled.form`
     background: rgba(0, 0, 0, 0.2);

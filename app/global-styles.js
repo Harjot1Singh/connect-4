@@ -1,7 +1,7 @@
 import { injectGlobal } from 'styled-components';
 
 import Background from './images/background.png';
-import FontAwesome from 'font-awesome/css/font-awesome.min.css'
+import FontAwesome from 'font-awesome/css/font-awesome.min.css';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`

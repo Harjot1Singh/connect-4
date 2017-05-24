@@ -18,17 +18,21 @@ npm start
 
 # Build for production with minification
 npm run build
+
+# Run in production mode
+npm run start:prod
+
 ```
 
 # Usage
 
 All source files are in `src`. The application entry point is `src/main.js`.
 
-Run `npm run dev` to start Webpack with hot-reloading. 
+Run `npm start` to start Webpack with hot-reloading. 
 
 To build with minification, `npm run build`.
 
-To run a production server, with minified assets, `npm run start:production`.
+To run a production server, with minified assets, `npm run start:prod`.
 
 ## Host and Port
 

@@ -11,10 +11,8 @@
 
 // Library Imports
 import React, { Component } from 'react';
-import styled from 'styled-components';
 
 // Local Imports
-import Button from '../../components/Button';
 import Title from '../../components/Title';
 import Container from '../../components/Container';
 import Form from '../../components/Form';
@@ -25,7 +23,6 @@ export default class HomePage extends Component { // eslint-disable-line react/p
   } 
   
   render() {
-    
     return (
       <Container>
         <Title>Connect 4</Title>
