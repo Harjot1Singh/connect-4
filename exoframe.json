@@ -1,0 +1,8 @@
+{
+  "name": "connect-4",
+  "restart": "always",
+  "domain": "connect4.harjot.me",
+  "env": {
+    "PORT": "42563"
+  }
+}

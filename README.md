@@ -47,7 +47,7 @@ To build with minification, `npm run build`.
 To run a production server, with minified assets, `npm run start:prod`.
 
 
-`docker-compose up` can also be used for systems with Docker installed, bringing it up on port `42563`.
+`docker-compose up` can also be used for systems with Docker installed, bringing it up on port `3000` by default.
 
 ## Host and Port
 
