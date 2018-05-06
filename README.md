@@ -46,6 +46,9 @@ To build with minification, `npm run build`.
 
 To run a production server, with minified assets, `npm run start:prod`.
 
+
+`docker-compose up` can also be used for systems with Docker installed, bringing it up on port `42563`.
+
 ## Host and Port
 
 To change the host and/or port the app is accessible at, pass the `--host` and/or `--port` option to the command with --. E.g. to make the app visible at `my-local-hostname:5000`, run the following: `npm start -- --host my-local-hostname --port 5000`.

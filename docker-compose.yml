@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  app:
+    image: connect-4
+    build: .
+    environment:
+      NODE_ENV: production
+      PORT: 42563
+    ports:
+      - 42563:42563
