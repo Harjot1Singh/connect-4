@@ -1,11 +1,13 @@
 version: '3'
 
 services:
-  app:
+  connect4:
     image: connect-4
     build: .
     environment:
       NODE_ENV: production
-      PORT: 42563
-    ports:
-      - 42563:42563
+      PORT: 52525
+    labels:
+      traefik.frontend.rule: "Host:connect4.harjot.me"
+      traefik.backend: "connect4"
+      traefik.port: "52525"
